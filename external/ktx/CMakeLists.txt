@@ -27,13 +27,21 @@ add_library(ExtKTX INTERFACE)
 
 set(ExtKTX_BIN_PATH ${PROJECT_SOURCE_DIR}/../common/lib/ext/glew/1.9.0/bin/x64)
 
+target_link_directories(ExtKTX
+    INTERFACE
+    ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/build
+)
+
 target_link_libraries(ExtKTX INTERFACE
-    ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/build/$<$<CONFIG:Debug>:debug>$<$<CONFIG:Release>:release>/ktx.lib
+    #${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/build/$<$<CONFIG:Debug>:debug>$<$<CONFIG:Release>:release>/ktx.lib
+    ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/build/libktx.so
+    #ktx
 )
 
 target_include_directories(ExtKTX INTERFACE
     ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/other_include
     ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/include
     ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/lib
-
 )
+
+#add_subdirectory(${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx)

@@ -113,7 +113,8 @@ gitMappingLin = {
     "https://github.com/g-truc/glm.git"         : [cmpCommon+"glm",         "0.9.8.0"],
     "https://github.com/discord/rapidxml.git"   : [cmpCommon+"rapidxml",    "master"],
     "https://github.com/ocornut/imgui"          : [cmpCommon+"imgui",       "v1.85"],
-    "https://github.com/glfw/glfw/"             : [cmpCommon+"glfw",        "3.3.2"]
+    "https://github.com/glfw/glfw/"             : [cmpCommon+"glfw",        "3.3.2"],
+    "https://github.com/KhronosGroup/KTX-Software.git" : [cmpCommon+"ktx", "v4.0.0-beta4"],
 }
 
 # Libs to build on Unix

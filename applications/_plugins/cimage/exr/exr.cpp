@@ -79,6 +79,7 @@ IMath.lib;Half.lib;IlmImf.lib;IlmThread.lib;Iex.lib;zlibstatic_d.lib;
 #include <ImfMultiPartInputFile.h>
 #include <ImfInputPart.h>
 #include <ImfPartType.h>
+#include <ImfDeepFrameBuffer.h>
 #include <ImfDeepTiledInputPart.h>
 #include <ImfChannelList.h>
 #include <ImfTiledInputPart.h>

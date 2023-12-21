@@ -18,6 +18,7 @@ if (CMP_HOST_WINDOWS)
 else()
     set(OpenEXR_INCLUDE_DIRS 
         /usr/include/OpenEXR
+        /usr/include/Imath
         )
     target_include_directories(ExtOpenEXR INTERFACE ${OpenEXR_INCLUDE_DIRS})
 endif()

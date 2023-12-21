@@ -140,9 +140,9 @@ endif()
 if (OPTION_BUILD_KTX2)
     list(APPEND CMP_LIBS Image_KTX)
 
-    if (CMP_HOST_WINDOWS)
+    #if (CMP_HOST_WINDOWS)
         list(APPEND CMP_LIBS Image_KTX2)
-    endif()
+        #endif()
 endif()
 
 if (OPTION_BUILD_EXR)

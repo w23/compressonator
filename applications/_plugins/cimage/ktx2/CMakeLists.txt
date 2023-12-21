@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 add_library(Image_KTX2 STATIC "")
 
+message(STATUS "++++++++++++++++++ Image_KTX2" )
+
 target_sources(Image_KTX2
     PRIVATE
     ktx2.cpp
@@ -16,6 +18,7 @@ target_include_directories(Image_KTX2
     PRIVATE
     ./
     ${PROJECT_SOURCE_DIR}/applications/_plugins/cimage/ktx
+    #${PROJECT_SOURCE_DIR}/applications/_plugins/cimage/ktx/lib
     ${PROJECT_SOURCE_DIR}/cmp_compressonatorlib
     ${PROJECT_SOURCE_DIR}/applications/_libs/gpu_decode
     ${PROJECT_SOURCE_DIR}/cmp_framework/common/half
@@ -39,6 +42,20 @@ if (CMP_HOST_WINDOWS)
         ExtKTX
         )
 endif()
+
+    target_include_directories(Image_KTX2
+      PRIVATE
+      ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/include
+      ${PROJECT_SOURCE_DIR}/../common/lib/ext/ktx/lib
+      ${VULKAN_SDK_PATH}/include/
+      )
+
+    target_link_libraries(Image_KTX2 PRIVATE
+        CMP_Compressonator
+        CMP_Framework
+        ExtKTX
+        #ktx
+        )
 
 if (UNIX)
     target_compile_definitions(Image_KTX2 PRIVATE _LINUX)

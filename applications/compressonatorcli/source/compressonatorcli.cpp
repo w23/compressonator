@@ -86,9 +86,9 @@ extern void* make_Image_Plugin_BRLG();
 extern void* make_Image_Plugin_BINARY();
 #endif
 
-#ifdef _WIN32
+//#ifdef _WIN32
 extern void* make_Plugin_KTX2();
-#endif
+//#endif
 
 // Setup Static Host Pluging Libs
 extern void CMP_RegisterHostPlugins();
@@ -526,9 +526,9 @@ int main(int argc, char* argv[])
 
 #if (OPTION_BUILD_KTX2 == 1)
     g_pluginManager.registerStaticPlugin("IMAGE", "KTX", (void*)make_Plugin_KTX);
-#ifdef _WIN32
+//#ifdef _WIN32
     g_pluginManager.registerStaticPlugin("IMAGE", "KTX2", (void*)make_Plugin_KTX2);
-#endif
+//#endif
 #endif
 
 #ifdef USE_LOSSLESS_COMPRESSION

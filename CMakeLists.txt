@@ -354,9 +354,9 @@ if (LIB_BUILD_IMAGEIO)
     endif()
     if (OPTION_BUILD_KTX2)
         add_subdirectory(applications/_plugins/cimage/ktx)
-        if (CMP_HOST_WINDOWS) # disable for Linux & Mac builds
+        #if (CMP_HOST_WINDOWS) # disable for Linux & Mac builds
             add_subdirectory(applications/_plugins/cimage/ktx2)
-        endif()
+            #endif()
     endif()
     if (OPTION_BUILD_BROTLIG)
         if (CMP_HOST_WINDOWS) # disable for Linux & Mac builds
